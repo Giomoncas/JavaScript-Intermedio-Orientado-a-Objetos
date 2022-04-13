@@ -50,13 +50,26 @@ function isObject(subject) {
     },
   };
   
-  const juan = deepCopy(studentBase);  //Copiamos todo el objeto studentBase
-  Object.defineProperty(juan, "name", {  //De esta manera evitamos que se modifique la propiedad name de Juan
+  const juan5 = deepCopy(studentBase);  //Copiamos todo el objeto studentBase
+  Object.defineProperty(juan5, "name", {  //De esta manera evitamos que se modifique la propiedad name de Juan
       value: "Juan",
       configurable: false,  //El problema de este metodo es que tocaria colocarle la propiedad configurable a false a cada atributo del objeto
   });
 
-  Object.seal(juan); //De esta manera colocamos todas las propiedades configurable en false
-  Object.isSealed(juan); //Verificamos si el objeto tiene sus propiedades protegidad por configurable false , arroja falso o verdadero
-  Object.isFrozen(juan); //Verificamos si el objeto tiene sus propiedades protegidad por configurable y writeable en false, arroja falso o verdadero
+  Object.seal(juan5); //De esta manera colocamos todas las propiedades configurable en false
+  Object.isSealed(juan5); //Verificamos si el objeto tiene sus propiedades protegidad por configurable false , arroja falso o verdadero
+  Object.isFrozen(juan5); //Verificamos si el objeto tiene sus propiedades protegidad por configurable y writeable en false, arroja falso o verdadero
   // juan.name = "Juanito";
+
+  //Factory Pattern y RORO
+
+  function createStudent()
+  {
+     return {
+       
+
+
+     };
+  }
+
+  const pablo = createStudent();
